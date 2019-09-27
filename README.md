@@ -3,9 +3,9 @@
 This is the robust solution to make equal height for same child elements inside sibling containers. You just need to pull down the code and follow the following steps to make this code work for you.
 
 ## Setup
-
 To get started, simply clone this repository and use the code step by step.
 
+### Step-1
 Use this code to make basic configuration on the top of your .js file.
 ```
 /*--Responsive breakpoints check--start--*/
@@ -49,12 +49,18 @@ function genericSetHeightForAllSiblings(
 /*----GENERIC FUNCTION TO KEEP CONTENT HEIGHT SAME ON ALL SIBLINGS----ENDS ---*/
 ```
 
-## Features
-
-1. Search artists
-2. Events against searched artist
-
-## General Information
-I have used some 3rd party libraries/npm packages to make my code more efficient like 
-1. `Formik` to mantain forms properties
-2. `Yup` to create validation for form elements
+### Step-2
+Use the following code to call for specific section.
+```
+/*--Equal Height function start--*/
+function functionName(newWindowView) {
+  var container = jQuery(".container"),
+    allItems = [];
+  if (container.length > 0) {
+    allItems.push(container.find("child_Element"));
+    allItems.push(container.find("child_Elemnt_if_more"));
+    genericSetHeightForAllSiblings(allItems, newWindowView, 3);
+  }
+}
+/*--Equal Height function end--*/
+```
